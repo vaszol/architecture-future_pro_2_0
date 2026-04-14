@@ -1,0 +1,123 @@
+{
+  "basePath": "/",
+  "baseUrl": "",
+  "editUrl": "",
+  "logoFile": "logo.svg",
+  "jsFile": "",
+  "toggles": {
+    "showChart": true,
+    "showTagFilter": true,
+    "showQuadrantList": true,
+    "showEmptyRings": false
+  },
+  "sections": ["radar", "tags", "list"],
+  "colors": {
+    "foreground": "#fcf2e6",
+    "background": "#1a2a3a",
+    "highlight": "#4a9eff",
+    "content": "#ffffff",
+    "text": "#d0d0d0",
+    "link": "#4a9eff",
+    "border": "rgba(255, 255, 255, 0.1)",
+    "tag": "rgba(255, 255, 255, 0.1)"
+  },
+  "quadrants": [
+    {
+      "id": "languages-and-frameworks",
+      "title": "Языки и Фреймворки",
+      "description": "Языки программирования, библиотеки и фреймворки",
+      "color": "#4a9eff"
+    },
+    {
+      "id": "tools",
+      "title": "Инструменты",
+      "description": "CI/CD, мониторинг, тестирование, аналитика",
+      "color": "#6bcf7f"
+    },
+    {
+      "id": "platforms-and-operations",
+      "title": "Платформы",
+      "description": "Облачные платформы, базы данных, очереди, оркестрация",
+      "color": "#f5a623"
+    },
+    {
+      "id": "methods-and-patterns",
+      "title": "Практики и Паттерны",
+      "description": "Архитектурные подходы и паттерны",
+      "color": "#e84c3d"
+    }
+  ],
+  "rings": [
+    {
+      "id": "adopt",
+      "title": "Активно используем",
+      "description": "Рекомендуем для новых проектов",
+      "color": "#6bcf7f",
+      "radius": 0.5,
+      "strokeWidth": 5
+    },
+    {
+      "id": "trial",
+      "title": "Пробуем",
+      "description": "Пилотные проекты, выявляем ограничения",
+      "color": "#f5a623",
+      "radius": 0.69,
+      "strokeWidth": 3
+    },
+    {
+      "id": "assess",
+      "title": "Изучаем",
+      "description": "Оцениваем потенциал для бизнеса",
+      "color": "#4a9eff",
+      "radius": 0.85,
+      "strokeWidth": 2
+    },
+    {
+      "id": "hold",
+      "title": "Выводим",
+      "description": "Не используем в новых проектах",
+      "color": "#e84c3d",
+      "radius": 1,
+      "strokeWidth": 0.75
+    }
+  ],
+  "flags": {
+    "new": {
+      "color": "#f5a623",
+      "title": "Новое",
+      "titleShort": "N",
+      "description": "Новое в этой версии"
+    },
+    "changed": {
+      "color": "#4a9eff",
+      "title": "Изменено",
+      "titleShort": "C",
+      "description": "Недавно менялось"
+    },
+    "default": {
+      "description": "Нет изменений"
+    }
+  },
+  "chart": {
+    "size": 800,
+    "blipSize": 12
+  },
+  "social": [],
+  "imprint": "",
+  "labels": {
+    "title": "Технический радар «Будущее 2.0»",
+    "imprint": "",
+    "quadrant": "Технические области",
+    "quadrantOverview": "Подробнее",
+    "zoomIn": "Приблизить",
+    "filterByTag": "Отфильтровать по тегу",
+    "footer": "Технический радар компании «Будущее 2.0»",
+    "notUpdated": "Давно не менялось",
+    "notFound": "404",
+    "pageAbout": "Как пользоваться",
+    "pageOverview": "Обзор технологий",
+    "pageSearch": "Поиск",
+    "searchPlaceholder": "Что ищете?",
+    "metaDescription": "Технический радар компании Будущее 2.0"
+  }
+}
