@@ -1,0 +1,288 @@
+<mxfile host="drawio-plugin" modified="2026-04-13T20:16:37.380Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="D7Np6u_S4Iqac6rnupAv" version="22.1.22" type="embed" pages="2">
+  <diagram name="C4-Level1-Context" id="c4-level1">
+    <mxGraphModel dx="1105" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title1" value="Контекстная диаграмма (C4 Level 1)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="600" y="20" width="400" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="system" value="Будущее 2.0" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="560" y="280" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="patient" value="Пациенты" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="200" y="120" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="doctor" value="Врачи" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="200" y="240" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="analyst" value="Фин. аналитики" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="200" y="360" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="management" value="Руководство" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="200" y="480" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="regulator" value="Регуляторы" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1120" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pharma" value="Фарм-компании" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1120" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="insurance" value="Страховые" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1120" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="patient" target="system" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="340" as="sourcePoint" />
+            <mxPoint x="450" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge1_label" value="Запись к врачу" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="380" y="190" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="doctor" target="system" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="340" as="sourcePoint" />
+            <mxPoint x="450" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge2_label" value="Работа с медкартами" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="370" y="270" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="analyst" target="system" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="520" as="sourcePoint" />
+            <mxPoint x="450" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge3_label" value="Финансовая аналитика" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="365" y="340" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="management" target="system" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="520" as="sourcePoint" />
+            <mxPoint x="450" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge4_label" value="Управленческая отчётность" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="355" y="410" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" source="system" target="regulator" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="840" y="330" as="sourcePoint" />
+            <mxPoint x="1100" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5_label" value="Отчётность по 152-ФЗ" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="930" y="310" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" source="system" target="pharma" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="840" y="360" as="sourcePoint" />
+            <mxPoint x="1280" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge6_label" value="API-интеграция" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="945" y="230" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" source="system" target="insurance" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="840" y="450" as="sourcePoint" />
+            <mxPoint x="1100" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge7_label" value="Обмен данными" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="945" y="380" width="80" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="C4-Level2-Containers" id="c4-level2">
+    <mxGraphModel dx="1842" dy="943" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title2" value="Диаграмма контейнеров (C4 Level 2) - Целевая архитектура через 3 года" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="600" y="20" width="600" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="user-layer" value="Пользовательский слой" style="swimlane;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="40" y="80" width="320" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="web-portal" value="Web-портал&#xa;(React)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="user-layer" vertex="1">
+          <mxGeometry x="20" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mobile-app" value="Мобильное приложение&#xa;(React Native)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="user-layer" vertex="1">
+          <mxGeometry x="160" y="40" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bi-dashboards" value="BI-дашборды&#xa;(Power BI / Superset)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="user-layer" vertex="1">
+          <mxGeometry x="20" y="110" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="api-gateway" value="API Gateway&#xa;(Kong / Nginx)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="440" y="140" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="domain-layer" value="Доменные сервисы" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="660" y="80" width="720" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="medical-domain" value="Медицинский домен" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="domain-layer" vertex="1">
+          <mxGeometry x="10" y="30" width="340" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="med-api" value="Медицинский API&#xa;(Go/Java)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="medical-domain" vertex="1">
+          <mxGeometry x="10" y="40" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="emr" value="Электронные медкарты&#xa;(EMR)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="medical-domain" vertex="1">
+          <mxGeometry x="180" y="40" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lab-data" value="Лабораторные данные" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="medical-domain" vertex="1">
+          <mxGeometry x="10" y="120" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="med-db" value="Медицинская БД&#xa;(PostgreSQL)" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="medical-domain" vertex="1">
+          <mxGeometry x="180" y="110" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-domain" value="ИИ-домен" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="domain-layer" vertex="1">
+          <mxGeometry x="370" y="30" width="340" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-api" value="ИИ API Gateway&#xa;(Python/FastAPI)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="ai-domain" vertex="1">
+          <mxGeometry x="10" y="40" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="diag-models" value="Диагностические&#xa;модели" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="ai-domain" vertex="1">
+          <mxGeometry x="180" y="40" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pred-analytics" value="Предиктивная&#xa;аналитика" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="ai-domain" vertex="1">
+          <mxGeometry x="10" y="120" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-db" value="Vector DB / Redis" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="ai-domain" vertex="1">
+          <mxGeometry x="180" y="110" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fintech-domain" value="Финтех-домен" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="domain-layer" vertex="1">
+          <mxGeometry x="10" y="300" width="340" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="fin-api" value="Финансовый API&#xa;(Golang/Java)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="fintech-domain" vertex="1">
+          <mxGeometry x="10" y="40" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="core-banking" value="Core Banking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="fintech-domain" vertex="1">
+          <mxGeometry x="180" y="40" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="payment-gw" value="Платёжный шлюз" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="fintech-domain" vertex="1">
+          <mxGeometry x="10" y="120" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fin-db" value="Финансовая БД&#xa;(PostgreSQL)" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="fintech-domain" vertex="1">
+          <mxGeometry x="180" y="110" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="analytics-domain" value="Аналитический домен" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="domain-layer" vertex="1">
+          <mxGeometry x="370" y="300" width="340" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="analytics-api" value="Analytics API&#xa;(GraphQL)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="analytics-domain" vertex="1">
+          <mxGeometry x="10" y="40" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="stream-processor" value="Stream Processor&#xa;(Kafka/Spark)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="analytics-domain" vertex="1">
+          <mxGeometry x="180" y="40" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dwh" value="ClickHouse DWH" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="analytics-domain" vertex="1">
+          <mxGeometry x="10" y="120" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="data-lake" value="S3 Data Lake" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="analytics-domain" vertex="1">
+          <mxGeometry x="180" y="120" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="integration-layer" value="Интеграционный слой" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="40" y="760" width="1340" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="event-bus" value="Событийная шина&#xa;(Kafka / RabbitMQ)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="integration-layer" vertex="1">
+          <mxGeometry x="20" y="30" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="acl" value="Антикоррупционный слой&#xa;(Anti-Corruption Layer)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="integration-layer" vertex="1">
+          <mxGeometry x="240" y="30" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="legacy-dwh" value="Старый DWH&#xa;(SQL Server 2008)" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;" parent="integration-layer" vertex="1">
+          <mxGeometry x="500" y="30" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="legacy-esb" value="Старая ESB&#xa;(Apache Camel)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;" parent="integration-layer" vertex="1">
+          <mxGeometry x="700" y="30" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="legacy-label" value="🔴 В процессе отказа" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#b85450;fontStyle=2" parent="integration-layer" vertex="1">
+          <mxGeometry x="540" y="100" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="conn1" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="user-layer" target="api-gateway" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="170" as="sourcePoint" />
+            <mxPoint x="440" y="175" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn2" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="api-gateway" target="domain-layer" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" y="175" as="sourcePoint" />
+            <mxPoint x="660" y="175" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-med-event" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" source="medical-domain" target="event-bus" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="670" y="330" as="sourcePoint" />
+            <mxPoint x="150" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-ai-event" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" source="ai-domain" target="event-bus" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1030" y="330" as="sourcePoint" />
+            <mxPoint x="150" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-fin-event" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" source="fintech-domain" target="event-bus" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="670" y="600" as="sourcePoint" />
+            <mxPoint x="150" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-event-analytics" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="event-bus" target="analytics-domain" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="790" as="sourcePoint" />
+            <mxPoint x="560" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-acl-legacy" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" source="acl" target="legacy-dwh" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="440" y="790" as="sourcePoint" />
+            <mxPoint x="500" y="790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-acl-legacy2" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" source="acl" target="legacy-esb" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="440" y="810" as="sourcePoint" />
+            <mxPoint x="700" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend" value="Легенда" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f9f9f9;strokeColor=#999999;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="40" y="940" width="540" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="legend1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="legend" vertex="1">
+          <mxGeometry x="10" y="30" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend1-text" value="Пользовательский интерфейс" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="legend" vertex="1">
+          <mxGeometry x="50" y="25" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="legend" vertex="1">
+          <mxGeometry x="10" y="55" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend2-text" value="API Gateway / Интеграция" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="legend" vertex="1">
+          <mxGeometry x="50" y="50" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="legend" vertex="1">
+          <mxGeometry x="210" y="30" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend3-text" value="Сервис / Контейнер" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="legend" vertex="1">
+          <mxGeometry x="250" y="25" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend4" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#b1ddf5;strokeColor=#10739e;" parent="legend" vertex="1">
+          <mxGeometry x="210" y="55" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend4-text" value="База данных" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="legend" vertex="1">
+          <mxGeometry x="250" y="60" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend5" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;" parent="legend" vertex="1">
+          <mxGeometry x="380" y="30" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend5-text" value="Легаси (к отказу)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="legend" vertex="1">
+          <mxGeometry x="415" y="25" width="120" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
