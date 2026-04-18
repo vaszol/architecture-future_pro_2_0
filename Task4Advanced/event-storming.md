@@ -5,49 +5,54 @@
 - 🔵 Команда (Command)
 - 🟠 Событие (Event)
 - 🟢 Политика/Правило (Policy)
+- 🟡 Агрегат (Aggregate) - группа связанных объектов
+- 🟣 Внешняя система (External System) - внешний источник/получатель
+- ⚪ Актор (Actor) - пользователь или роль
+
+
 - 🟣 Агрегат (Aggregate)
 - ⬛ Внешняя система (External System)
 
 ## Схема Event Storming
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                              Patient Management Context                                         │
-│  🔵 RegisterPatient ──► 🟠 PatientRegistered ──► 🟢 CreateMedicalRecord                         │
-│                                                                                                 │
-│  🔵 UpdatePatient ──► 🟠 PatientUpdated ──► 🟢 UpdateAnalytics                                  │
-└─────────────────────────────────────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                              Patient Management Context                                 │
+│ ⚪ Patient ──► 🔵 RegisterPatient ──► 🟠 PatientRegistered ──► 🟢 CreateMedicalRecord  │
+│                                                                                         │
+│ ⚪ Admin ──► 🔵 UpdatePatient ──► 🟠 PatientUpdated ──► 🟢 UpdateAnalytics             │
+└─────────────────────────────────────────────────────────────────────────────────────────┘
 │
 │ 🟠 PatientRegistered
 │ 🟠 PatientUpdated
 ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
 │                              Appointment Context                                                │
-│  🔵 ScheduleAppointment ──► 🟠 AppointmentScheduled ──► 🟢 CheckAvailability                     │
+│ ⚪ Patient ──► 🔵 ScheduleAppointment ──► 🟠 AppointmentScheduled ──► 🟢 CheckAvailability     │
 │                                                                                                 │
-│  🔵 ConfirmAppointment ──► 🟠 AppointmentConfirmed ──► 🟢 NotifyPatient                          │
+│ ⚪ Patient ──► 🔵 ConfirmAppointment ──► 🟠 AppointmentConfirmed ──► 🟢 NotifyPatient          │
 │                                                                                                 │
-│  🔵 CompleteAppointment ──► 🟠 AppointmentCompleted ──► 🟢 GenerateInvoice (Billing)            │
+│ ⚪ Doctor ──► 🔵 CompleteAppointment ──► 🟠 AppointmentCompleted ──► 🟢 GenerateInvoice        │
 │                                                                                                 │
-│  🔵 CancelAppointment ──► 🟠 AppointmentCancelled ──► 🟢 RefundPayment (Payment)                │
+│ ⚪ Patient ──► 🔵 CancelAppointment ──► 🟠 AppointmentCancelled ──► 🟢 RefundPayment           │
 └─────────────────────────────────────────────────────────────────────────────────────────────────┘
 │
 │ 🟠 AppointmentCompleted
 ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
 │                              Medical Record Context                                             │
-│  🔵 AddDiagnosis ──► 🟠 DiagnosisAdded ──► 🟢 UpdateRiskScore (AI)                              │
-│                                          │                                                      │
-│                                          ├──► 🟢 CheckInsuranceCoverage (Insurance)             │
-│                                          │                                                      │
-│                                          └──► 🟢 UpdateAnalytics                               │
+│ ⚪ Doctor ──► 🔵 AddDiagnosis ──► 🟠 DiagnosisAdded ──► 🟢 UpdateRiskScore                     │
+│                                                       │                                         │
+│                                                       ├──► 🟢 CheckInsuranceCoverage            │
+│                                                       │                                         │
+│                                                       └──► 🟢 UpdateAnalytics                   │
 └─────────────────────────────────────────────────────────────────────────────────────────────────┘
 │
 │ 🟠 DiagnosisAdded
 ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
 │                              AI - Diagnostics Context                                           │
-│  🔵 RequestInference ──► 🟠 InferenceRequested ──► 🟢 ExecuteModel                              │
+│  🟢 DiagnosisAdded ──► 🔵 RequestInference ──► 🟠 InferenceRequested ──► 🟢 ExecuteModel       │
 │                                                                                                 │
 │  🟢 ExecuteModel ──► 🟠 InferenceCompleted ──► 🟢 StoreResult (Medical Record)                  │
 │                                                                                                 │
@@ -58,70 +63,70 @@
 ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
 │                              AI - Prediction Context                                            │
-│  🔵 CalculateRisk ──► 🟠 RiskScoreCalculated ──► 🟢 EvaluateForInsurance                        │
-│                                                                                                 │
-│                      └──► 🟢 UpdateCreditScore (Credit)                                         │
+│ 🟢 DiagnosisAdded ──► 🔵 CalculateRisk ──► 🟠 RiskScoreCalculated ──► 🟢 EvaluateForInsurance  │
+│                                          │                                                      │
+│                                          └──► 🟢 UpdateCreditScore (Credit)                     │
 └─────────────────────────────────────────────────────────────────────────────────────────────────┘
 │
 │ 🟠 RiskScoreCalculated
 ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                              Insurance Context                                                 │
-│  🔵 IssuePolicy ──► 🟠 PolicyIssued ──► 🟢 GenerateInvoice (Billing)                           │
+│                              Insurance Context                                                  │
+│ ⚪ Customer ──► 🔵 IssuePolicy ──► 🟠 PolicyIssued ──► 🟢 GenerateInvoice                      │
 │                                                                                                 │
-│  🔵 FileClaim ──► 🟠 ClaimFiled ──► 🟢 ValidateClaim                                            │
+│ ⚪ Customer ──► 🔵 FileClaim ──► 🟠 ClaimFiled ──► 🟢 ValidateClaim                            │
 │                                                                                                 │
-│  🟢 ValidateClaim ──► 🟠 ClaimSettled ──► 🟢 ProcessPayment (Payment)                           │
+│ 🟢 ValidateClaim ──► 🟠 ClaimSettled ──► 🟢 ProcessPayment                                     │
 │                                                                                                 │
-│  🔵 CancelPolicy ──► 🟠 PolicyCancelled ──► 🟢 RefundPremium (Payment)                          │
+│ ⚪ Customer ──► 🔵 CancelPolicy ──► 🟠 PolicyCancelled ──► 🟢 RefundPremium                    │
 └─────────────────────────────────────────────────────────────────────────────────────────────────┘
 │
 │ 🟠 PolicyIssued
 ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                              Credit Context                                                    │
-│  🔵 ApplyForCredit ──► 🟠 CreditAgreementSigned ──► 🟢 CheckRiskScore (AI)                     │
+│                              Credit Context                                                     │
+│  ⚪ Customer ──► 🔵 ApplyForCredit ──► 🟠 CreditAgreementSigned ──► 🟢 CheckRiskScore          │
 │                                                                                                 │
-│  🟢 CheckRiskScore ──► 🟠 CreditAgreementActivated ──► 🟢 SetupPaymentSchedule                  │
+│  🟢 CheckRiskScore ──► 🟠 CreditAgreementActivated ──► 🟢 SetupPaymentSchedule                 │
 │                                                                                                 │
-│  🔵 MakePayment ──► 🟠 PaymentMade ──► 🟢 UpdateBalance                                         │
+│  ⚪ Customer ──► 🔵 MakePayment ──► 🟠 PaymentMade ──► 🟢 UpdateBalance                        │
 │                                                                                                 │
-│  🔵 CloseAgreement ──► 🟠 CreditAgreementClosed ──► 🟢 UpdateAnalytics                          │
+│  ⚪ Customer ──► 🔵 CloseAgreement ──► 🟠 CreditAgreementClosed ──► 🟢 UpdateAnalytics         │
 └─────────────────────────────────────────────────────────────────────────────────────────────────┘
 │
 │ 🟠 PaymentMade
 ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                              Payment Context                                                   │
-│  🔵 InitiatePayment ──► 🟠 PaymentInitiated ──► 🟢 ProcessWithBank (⬛ External Bank)          │
+│                              Payment Context                                                    │
+│  🟢 InvoiceGenerated ──► 🔵 InitiatePayment ──► 🟠 PaymentInitiated ──► 🟢 ProcessWithBank     │
 │                                                                                                 │
-│  🟢 ProcessWithBank ──► 🟠 PaymentCompleted ──► 🟢 UpdateInvoice (Billing)                      │
+│  🟢 ProcessWithBank ──► 🟠 PaymentCompleted ──► 🟢 UpdateInvoice (Billing)                     │
 │                                                                                                 │
-│                      └──► 🟠 PaymentFailed ──► 🟢 RetryPayment                                  │
+│                      └──► 🟠 PaymentFailed ──► 🟢 RetryPayment                                 │
+│                                                                                                 │
+│  🟢 ProcessWithBank ──► 🟣 External Bank (⬛)                                                  │
 └─────────────────────────────────────────────────────────────────────────────────────────────────┘
 │
 │ 🟠 PaymentCompleted
 ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                              Billing Context                                                   │
-│  🔵 GenerateInvoice ──► 🟠 InvoiceGenerated ──► 🟢 SendToPatient                                │
+│                              Billing Context                                                    │
+│  🟠 AppointmentCompleted ──► 🔵 GenerateInvoice ──► 🟠 InvoiceGenerated ──► 🟢 SendToPatient   │
 │                                                                                                 │
-│  🔵 MarkAsPaid ──► 🟠 InvoicePaid ──► 🟢 UpdateAnalytics                                        │
+│  🟠 PaymentCompleted ──► 🔵 MarkAsPaid ──► 🟠 InvoicePaid ──► 🟢 UpdateAnalytics               │
 │                                                                                                 │
-│  🔵 CheckOverdue ──► 🟠 InvoiceOverdue ──► 🟢 SendReminder                                      │
+│  🔵 CheckOverdue ──► 🟠 InvoiceOverdue ──► 🟢 SendReminder                                     │
 └─────────────────────────────────────────────────────────────────────────────────────────────────┘
 │
 │ Все события
 ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                              Analytics Context                                                 │
-│  🟠 Все доменные события ──► 🟢 UpdateMetrics ──► 🟠 KPICalculated                              │
+│                              Analytics Context                                                  │
+│  🟠 Все доменные события ──► 🔵 UpdateMetrics ──► 🟠 KPICalculated ──► 🟢 CheckThresholds      │
 │                                                                                                 │
-│  🟢 UpdateMetrics ──► 🟠 KPICalculated ──► 🟢 CheckThresholds                                   │
+│  🟢 CheckThresholds ──► 🟠 AlertTriggered ──► 🟢 NotifyTeam                                    │
 │                                                                                                 │
-│  🟢 CheckThresholds ──► 🟠 AlertTriggered ──► 🟢 NotifyTeam                                      │
-│                                                                                                 │
-│  🔵 GenerateReport ──► 🟠 ReportGenerated ──► 🟢 DeliverToUser                                   │
+│  ⚪ Analyst ──► 🔵 GenerateReport ──► 🟠 ReportGenerated ──► 🟢 DeliverToUser                  │
 └─────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

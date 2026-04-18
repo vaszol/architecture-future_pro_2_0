@@ -35,20 +35,20 @@
 
 ## 2. Инструменты
 
-| Технология           | Статус | Обоснование                                 |
-|----------------------|--------|---------------------------------------------|
-| Terraform            | Adopt  | IaC, управление облачной инфраструктурой    |
-| GitHub Actions       | Adopt  | CI/CD, автоматизация деплоя                 |
-| Prometheus + Grafana | Adopt  | Мониторинг и визуализация метрик            |
-| ELK Stack            | Adopt  | Централизованный сбор и анализ логов        |
-| Jaeger / Tempo       | Trial  | Distributed tracing для микросервисов       |
-| SonarQube            | Adopt  | Статический анализ кода                     |
-| dbt                  | Trial  | Трансформация данных в аналитическом домене |
-| Great Expectations   | Trial  | Data quality и валидация                    |
-| ArgoCD               | Assess | GitOps для Kubernetes                       |
-| Jenkins              | Hold   | Заменяем на GitHub Actions                  |
-| PowerBuilder         | Hold   | Полный отказ, легаси                        |
-| Apache Camel         | Hold   | Заменяем на событийную архитектуру          |
+| Технология           | Статус | Обоснование                                                                                                                                      |
+|----------------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| Terraform            | Adopt  | IaC, управление облачной инфраструктурой                                                                                                         |
+| GitHub Actions       | Adopt  | CI/CD, автоматизация деплоя                                                                                                                      |
+| Prometheus + Grafana | Adopt  | Мониторинг и визуализация метрик                                                                                                                 |
+| ELK Stack            | Adopt  | Централизованный сбор и анализ логов                                                                                                             |
+| Jaeger / Tempo       | Trial  | Distributed tracing для микросервисов                                                                                                            |
+| SonarQube            | Adopt  | Статический анализ кода                                                                                                                          |
+| dbt                  | Trial  | Трансформация данных в аналитическом домене                                                                                                      |
+| Great Expectations   | Trial  | Data quality и валидация                                                                                                                         |
+| ArgoCD               | Assess | GitOps для Kubernetes                                                                                                                            |
+| Jenkins              | Hold   | Заменяем на GitHub Actions                                                                                                                       |
+| PowerBuilder         | Hold   | Полный отказ, легаси                                                                                                                             |
+| Apache Camel         | Hold   | Не сам фреймворк, а ESB/SOA подход. Целевая архитектура использует Kafka + потоковую обработку (Kafka Streams/Flink) вместо централизованной ESB |
 
 ## 3. Платформы
 
@@ -69,39 +69,43 @@
 
 ## 4. Архитектурные паттерны
 
-| Паттерн                   | Статус | Обоснование                                        |
-|---------------------------|--------|----------------------------------------------------|
-| Event-Driven Architecture | Adopt  | Слабосвязанные домены через события                |
-| Microservices             | Adopt  | Доменная декомпозиция, независимое масштабирование |
-| API Gateway               | Adopt  | Единая точка входа, маршрутизация                  |
-| C4 Model                  | Adopt  | Документирование архитектуры                       |
-| Data Mesh                 | Trial  | Децентрализованное управление данными              |
-| Self-service BI           | Adopt  | Портал самообслуживания для аналитики              |
-| Anti-Corruption Layer     | Adopt  | Интеграция с легаси-системами                      |
-| Saga Pattern              | Trial  | Управление распределёнными транзакциями            |
-| CQRS                      | Assess | Разделение чтения и записи                         |
-| Event Sourcing            | Assess | Хранение состояния как потока событий              |
-| Strangler Fig Pattern     | Adopt  | Поэтапная миграция с легаси                        |
-| Dual-write                | Trial  | Безопасная миграция данных                         |
-| Monolith (new)            | Hold   | Не используем для новых проектов                   |
-| ESB (Apache Camel)        | Hold   | Заменяем на EDA                                    |
+| Паттерн                      | Статус | Обоснование                                                                                 |
+|------------------------------|--------|---------------------------------------------------------------------------------------------|
+| Event-Driven Architecture    | Adopt  | Слабосвязанные домены через события                                                         |
+| Microservices                | Adopt  | Доменная декомпозиция, независимое масштабирование                                          |
+| API Gateway                  | Adopt  | Единая точка входа, маршрутизация                                                           |
+| C4 Model                     | Adopt  | Документирование архитектуры                                                                |
+| Data Mesh                    | Trial  | Децентрализованное управление данными                                                       |
+| Self-service BI              | Adopt  | Портал самообслуживания для аналитики                                                       |
+| Anti-Corruption Layer        | Adopt  | Интеграция с легаси-системами                                                               |
+| Saga Pattern                 | Trial  | Управление распределёнными транзакциями                                                     |
+| CQRS                         | Assess | Разделение чтения и записи                                                                  |
+| Event Sourcing               | Assess | Хранение состояния как потока событий                                                       |
+| Strangler Fig Pattern        | Adopt  | Поэтапная миграция с легаси                                                                 |
+| Dual-write                   | Trial  | Безопасная миграция данных                                                                  |
+| Monolith (new)               | Hold   | Не используем для новых проектов                                                            |
+| ESB (Enterprise Service Bus) | Hold   | Централизованная шина заменяется на децентрализованную событийную архитектуру (EDA) с Kafka |
 
 ## Визуализация радара
 
 За основу взят технический радар от AOE:
+
 ```shell
 #перейдем в каталог с SPA-приложением радаром 
 cd Task5Advanced/techradar
 ```
+
 ```shell
 #Устанавливаем. Версия NodeJS
 npm install
 ```
+
 ```shell
 #сборка и запуск
 npm run build
 npm run serve
 ```
+
 открываем по  http://localhost:3000/
 
 ![tech-radar.png](tech-radar.png)
